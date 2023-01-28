@@ -1,9 +1,7 @@
 <div class="container">
   <img src="../../assets/images/copo_agua.png" alt="Copo de agua" id="copo_agua">
   <div class="descricao">
-    <span>No app beba agua você pode calcular quanto de agua você deve beber no dia e registrar a quantidade de copos de
-      agua que você tomou no dia e receber um status seja ele positivo ou negativo, conforme o calculo que será
-      realizado.</span>
+    <span>Bem vindo ao app beba agua, aqui você aprende a importância de beber agua e ainda calcula a quantidade de agua que deve tomar por dia, tudo baseado pelo seu peso.</span>
     <br>
     <br>
   </div>
@@ -58,6 +56,27 @@
             </mat-card-actions>-->
           </mat-card>
         </div>
+        <div class="keen-slider__slide number-slide3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Lubrifica as juntas</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/images/mulher_bebendo_agua.jpeg" alt="Lubrifica as Juntas">
+            <mat-card-content>
+              <br>
+              <p>
+                A água é um componente do líquido sinovial6, que lubrifica e amortece as articulações e a cartilagem
+                circundante para evitar o atrito doloroso dos ossos. Uma hidratação adequada é importante para garantir
+                que a membrana sinovial de cada articulação possa produzir esse líquido protetor, diz Shanta Retelny.
+              </p>
+            </mat-card-content>
+            <!--TODO adição de icones de compartilhamento e curtir para redes sociais-->
+            <!--<mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>-->
+          </mat-card>
+        </div>
       </div>
       <svg [ngClass]="
       'arrow arrow--left ' + (currentSlide === 0 ? 'arrow--disabled' : '')
@@ -80,9 +99,13 @@
     <h2>Quanto de agua de vo tomar por dia?</h2>
     <mat-form-field appearance="outline">
       <mat-label>Peso em Kg</mat-label>
-      <input matInput placeholder="ex: 55" type="number" maxlength="3">
+      <input #peso matInput placeholder="ex: 55" type="number" maxlength="3">
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     </mat-form-field>
-    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="primary" (click)="btnPeso()">OBTER QUANTIDADE</button>
+  </div>
+  <div *ngIf="mostrarRespostaPeso" class="resultadoLitros">
+    <br>
+    <span>{{respostaLitros}}</span>
   </div>
 </div>

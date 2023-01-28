@@ -10,11 +10,14 @@ import KeenSlider, { KeenSliderInstance } from "keen-slider"
   ]
 })
 export class HomeComponentComponent {
-  @ViewChild("sliderRef") sliderRef: ElementRef<HTMLElement> | any
+  @ViewChild("sliderRef") sliderRef: ElementRef<HTMLElement> | any;
+  @ViewChild("peso") peso: ElementRef<HTMLElement> | any;
 
-  currentSlide: number = 1
-  dotHelper: Array<Number> = []
-  slider: KeenSliderInstance = null as any
+  currentSlide: number = 1;
+  dotHelper: Array<Number> = [];
+  slider: KeenSliderInstance = null as any;
+  respostaLitros: any;
+  mostrarRespostaPeso: boolean = false;
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -32,5 +35,12 @@ export class HomeComponentComponent {
 
   ngOnDestroy() {
     if (this.slider) this.slider.destroy()
+  }
+
+  btnPeso(){
+    const valuePeso = this.peso.nativeElement.value;
+    let calculaQuantidade = valuePeso * 35;
+    this.respostaLitros = `${calculaQuantidade.toString().substring(0, 1)} Litros e ${calculaQuantidade.toString().substring(1,5)}ml ao dia.`
+    this.mostrarRespostaPeso = true;
   }
 }
