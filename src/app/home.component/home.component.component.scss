@@ -1,9 +1,18 @@
-#copo_agua{
-  width: 100%;
+button {
+  height: 60px !important;
+  border-radius: 29px;
 }
+.copo_div{
+  width: 100%;
+  text-align: center;
+}
+#copo_agua{
+  width: 50%;
+}
+
 .container{
   margin: 0 auto;
-  width: 90%;
+  width: 50%;
 }
 
 .navigation-wrapper {
@@ -49,5 +58,60 @@
 }
 
 .example-card{
-  height: 500px;
+  height: 700px;
+}
+@media screen and (max-width: 768px){
+  #copo_agua{
+    width: 100%;
+  }
+
+  .container{
+    margin: 0 auto;
+    width: 90%;
+  }
+  .navigation-wrapper {
+    position: relative;
+  }
+
+  .dots {
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+  }
+
+  .dot:focus {
+    outline: none;
+  }
+
+  .dot.active {
+    background: #000;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    fill: black;
+    cursor: pointer;
+  }
+
+  .arrow--left {
+    left: 5px;
+  }
+
+  .arrow--right {
+    left: auto;
+    right: 5px;
+  }
+
+  .arrow--disabled {
+    fill: rgba(255, 255, 255, 0.5);
+  }
+
+  .example-card{
+    height: 600px;
+  }
 }

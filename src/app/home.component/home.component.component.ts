@@ -39,8 +39,14 @@ export class HomeComponentComponent {
 
   btnPeso(){
     const valuePeso = this.peso.nativeElement.value;
-    let calculaQuantidade = valuePeso * 35;
-    this.respostaLitros = `${calculaQuantidade.toString().substring(0, 1)} Litros e ${calculaQuantidade.toString().substring(1,5)}ml ao dia.`
-    this.mostrarRespostaPeso = true;
+    let calculaQuantidade: any = valuePeso * 35;
+    if(calculaQuantidade.toString().length > 3){
+      this.respostaLitros = `${calculaQuantidade.toString().substring(0, 1)} Litros e ${calculaQuantidade.toString().substring(1,5)}ml ao dia.`
+      this.mostrarRespostaPeso = true;
+    }else{
+      this.respostaLitros = `${calculaQuantidade.toString()}ml ao dia.`
+      this.mostrarRespostaPeso = true;
+    }
+
   }
 }

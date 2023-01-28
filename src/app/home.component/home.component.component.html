@@ -1,12 +1,15 @@
 <div class="container">
-  <img src="../../assets/images/copo_agua.png" alt="Copo de agua" id="copo_agua">
+  <div class="copo_div">
+    <img src="../../assets/images/copo_agua.png" alt="Copo de agua" id="copo_agua">
+  </div>
   <div class="descricao">
-    <span>Bem vindo ao app beba agua, aqui você aprende a importância de beber agua e ainda calcula a quantidade de agua que deve tomar por dia, tudo baseado pelo seu peso.</span>
+    <span class="texto_simples">Bem vindo ao app beba água, aqui você aprende a importância de beber água e ainda calcula a quantidade de água que deve tomar por dia, tudo baseado pelo seu peso.</span>
     <br>
     <br>
   </div>
   <div class="cardInformativo">
-    <h2>Porque é importante Beber Agua?</h2>
+    <h2>Porque é importante Beber Água?</h2>
+    <hr>
     <div class="keen-slider" #sliderRef>
       <div class="keen-slider keen-slider--vertical" #sliderRef>
         <div class="keen-slider__slide number-slide1">
@@ -17,7 +20,7 @@
             <img mat-card-image src="../../assets/images/garrafa_agua.png" alt="garrafa de agua">
             <mat-card-content>
               <br>
-              <p>
+              <p class="texto_simples">
                 A água é uma das melhores maneiras de reduzir o risco de pedras nos rins, de acordo com a National
                 Kidney Foundation9. Sem água suficiente, a produção de urina cai e isso pode permitir que os minerais
                 formadores de pedras se acumulem nos rins e na bexiga. Da mesma forma, obter líquido suficiente pode
@@ -41,7 +44,7 @@
             <img mat-card-image src="../../assets/images/concentracao.png" alt="concentracao">
             <mat-card-content>
               <br>
-              <p>
+              <p class="texto_simples">
                 "O cérebro funciona melhor quando está devidamente hidratado", diz Shanta Retelny. "O pensamento fica
                 mais claro, o foco melhora e os neurônios certamente irão agir de uma melhor forma". Um estudo sobre
                 mulheres publicado no The Journal of Nutrition3 explorou o estado de hidratação na função cerebral e
@@ -64,7 +67,7 @@
             <img mat-card-image src="../../assets/images/mulher_bebendo_agua.jpeg" alt="Lubrifica as Juntas">
             <mat-card-content>
               <br>
-              <p>
+              <p class="texto_simples">
                 A água é um componente do líquido sinovial6, que lubrifica e amortece as articulações e a cartilagem
                 circundante para evitar o atrito doloroso dos ossos. Uma hidratação adequada é importante para garantir
                 que a membrana sinovial de cada articulação possa produzir esse líquido protetor, diz Shanta Retelny.
@@ -102,10 +105,11 @@
       <input #peso matInput placeholder="ex: 55" type="number" maxlength="3">
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     </mat-form-field>
+    <br>
     <button mat-raised-button color="primary" (click)="btnPeso()">OBTER QUANTIDADE</button>
   </div>
   <div *ngIf="mostrarRespostaPeso" class="resultadoLitros">
     <br>
-    <span>{{respostaLitros}}</span>
+    <span class="texto_simples">{{respostaLitros}}</span>
   </div>
 </div>
